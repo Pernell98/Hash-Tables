@@ -8,22 +8,42 @@ namespace Hashing_Table
 {
     class Hashing
     {
+        private Hashtable hashes = new Hashtable(2);
+        public Hashing()
+        {
+            hashes = insert();
+            find(2);
+        }
+
+
         public hashingTable insert()
         {
-            //insert hashing table
+            for (int a = 0; a < 2; a++)
+            {
+                Console.WriteLine("enter something\n");
+                hashes.Add(a, Console.ReadLine());
+            }
+            return hashes;
         }
+    
         
 
         public hashTable remove()
         {
-            //Remove hashtable
+        hashes.Remove(key);
+        return hashes;
         }
 
 
 
         public hashTable find()
         {
-            //Finds the hash tables
+        if (hashes.ContainsKey(key))
+        {
+            Console.WriteLine("found " + hashes[key]);
+        }
+        else
+            Console.WriteLine("the key " + key + " is not found in the hash.");
         }
 
     }
